@@ -1,17 +1,11 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import plotly.express as px
 from sqlalchemy import create_engine
 from fredapi import Fred
 import time
 
 # Import individual index components
 import fredseries
-
-plt.style.use('fivethirtyeight')
-pd.options.display.max_columns = 500
-color_pal = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
 fred_key = '46f9c73428a0be4b7d3fd21f548d2444'
 fred = Fred(api_key=fred_key)
