@@ -18,7 +18,6 @@ def getFred(series):
         series_results.append(series_data)
         time.sleep(0.25)
         
-
     series_df = pd.concat(series_results, axis=1)
     series_df = series_df.mean(axis=1)
     series_df = series_df.divide(series_df.iloc[0])*100
@@ -41,6 +40,7 @@ def generateSubindex(dataframes, weights):
     processed_df = generateComponents(concatenated_df)
     weighted_sum = (processed_df * weights).sum(axis=1)
     index_df = pd.DataFrame(weighted_sum.iloc[-120:] / weighted_sum.iloc[0] * 100)
+    
     return index_df
     
 # Loop categories and weights through generateSubindex from dict
@@ -49,6 +49,7 @@ def processSubindex(categories):
     for category, values in categories.items():
         index = generateSubindex(values['dataframes'], values['weights'])
         indexes[category] = index
+    
     return indexes
 
 # Define subindex categories and weights
