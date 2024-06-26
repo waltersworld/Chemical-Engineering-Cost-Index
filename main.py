@@ -5,7 +5,7 @@ from fredapi import Fred
 import time
 import fredseries
 
-fred_key = '46f9c73428a0be4b7d3fd21f548d2444'
+fred_key = 'YOUR_KEY_HERE'
 fred = Fred(api_key=fred_key)
 
 # Get timeseries data from FRED
